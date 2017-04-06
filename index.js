@@ -16,6 +16,9 @@ function mkCache(createFn) {
 		getAll: function () {
 			return data;
 		},
+		check: function(id) {
+			return data[id] !== undefined;
+		},
 		clear: function() {
 			data = {};
 		},
@@ -50,6 +53,9 @@ function mkCachePromise(createFn) {
 		},
 		getAll: function () {
 			return data;
+		},
+		check: function(id) {
+			return data[id] !== undefined;
 		},
 		clear: function() {
 			data = {};

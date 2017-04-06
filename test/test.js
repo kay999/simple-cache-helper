@@ -13,6 +13,9 @@ describe('sync-cache', function() {
 		expect(c1.get(1)).to.eql({ id:1, value:'i1' });
 		expect(c1.get(2)).to.eql({ id:2, value:'i2' });
 		expect(c1.get(1)).to.eql({ id:1, value:'i1' });
+		expect(c1.check(1)).to.be(true);
+		expect(c1.check(3)).to.be(false);
+		expect(c1.check(4)).to.be(false);
 		expect(c1.get(4)).to.be(undefined);
 		expect(c1.getAll()).eql({
 			'1': { id: 1, value: 'i1' },
@@ -53,6 +56,10 @@ describe('async-cache', function() {
 			return c1.get(1).then(function (v) {
 				expect(v).to.eql({ id:1, value:'i1' });
 			})
+		}).then(function () {
+			expect(c1.check(1)).to.be(true);
+			expect(c1.check(3)).to.be(false);
+			expect(c1.check(4)).to.be(false);
 		}).then(function () {
 			return c1.get(3).then(function (v) {
 				expect(v).to.eql({ id:3, value:'three' });

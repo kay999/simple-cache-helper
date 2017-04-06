@@ -1,5 +1,5 @@
 {
-  "name": "simple-cache",
+  "name": "simple-cache-helper",
   "version": "1.0.0",
   "dependencies": {},
   "description": "very basic data caching (sync/async)",
