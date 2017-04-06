@@ -1,6 +1,6 @@
 {
   "name": "simple-cache-helper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {},
   "description": "very basic data caching (sync/async)",
   "main": "index.js",
@@ -8,6 +8,10 @@
     "test": "mocha"
   },
   "author": "kay999",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kay999/simple-cache-helper.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "expect.js": "^0.3.1",
