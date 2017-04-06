@@ -1,0 +1,16 @@
+{
+  "name": "simple-cache",
+  "version": "1.0.0",
+  "dependencies": {},
+  "description": "very basic data caching (sync/async)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "kay999",
+  "license": "MIT",
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^3.2.0"
+  }
+}
