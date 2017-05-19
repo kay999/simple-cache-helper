@@ -36,19 +36,18 @@ function mkCachePromise(createFn) {
 			if (id == null) return Promise.resolve(id);		// allow null and undefined for id here
 
 			const val = data[id];
-			if (val) return Promise.resolve(val);
+			if (val) return val;
 
 			var newVal = createFn(id);
 
 			if (newVal != null && newVal.then) {			// check for a promise result
-				return newVal.then(function (el) {
-					data[id] = el;
-					return el;
-				})
+				data[id] = newVal;
+				return newVal;
 			}
 			else {
+				newVal = Promise.resolve(newVal);
 				data[id] = newVal;
-				return Promise.resolve(newVal);
+				return newVal;
 			}
 		},
 		getAll: function () {
